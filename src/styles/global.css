@@ -95,10 +95,33 @@ body {
   word-break: break-all;
 }
 
+/* ===== Korte URL ===== */
+.korte-url {
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--vlak);
+  padding: 20px 24px;
+  margin: 20px 0 32px;
+  text-align: center;
+}
+
+.korte-url-label {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: var(--zacht);
+}
+
+.korte-url-adres {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  word-break: break-all;
+}
+
 /* ===== Kaartenrooster ===== */
 .kaart-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -300,4 +323,189 @@ body {
 }
 .token.boolean {
   color: var(--tok-keyword);
+}
+
+/* ===== Kop met game-knoppen ===== */
+.app-kop-rij {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.kop-knoppen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.kop-knop {
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--tekst);
+  background: transparent;
+  border: 1px solid var(--lijn);
+  border-radius: 5px;
+  padding: 7px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.kop-knop:hover {
+  background: var(--vlak);
+}
+
+.kop-knop:focus-visible {
+  outline: 3px solid #7aa7ff;
+  outline-offset: 2px;
+}
+
+.kop-knop-primair {
+  color: var(--vlak);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.kop-knop-primair:hover {
+  background: #000;
+}
+
+.kop-status {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: var(--zacht);
+}
+
+/* ===== Game-banner ===== */
+.game-banner {
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--vlak);
+  padding: 16px 18px;
+  margin-bottom: 24px;
+}
+
+.game-voortgang {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+  color: var(--zacht);
+}
+
+.game-vraag {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.game-hint {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  color: var(--zacht);
+}
+
+/* ===== Uitslag met meme ===== */
+.uitslag {
+  background: var(--vlak);
+  border: 1px solid var(--lijn);
+  border-radius: 8px;
+  max-width: 460px;
+  width: 100%;
+  padding: 28px;
+  text-align: center;
+}
+
+.meme {
+  border: 2px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.meme-boven,
+.meme-onder {
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+}
+
+.meme-vlak {
+  font-size: 4rem;
+  line-height: 1;
+  padding: 28px 12px;
+  background: var(--achtergrond);
+}
+
+.uitslag-score {
+  margin: 0 0 6px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.uitslag-tekst {
+  margin: 0 0 20px;
+  color: var(--zacht);
+  font-size: 0.9rem;
+}
+
+.uitslag-knop {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--vlak);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.uitslag-knop:hover {
+  background: #000;
+}
+
+/* ===== Mobiel: 3 kolommen houden, geen horizontaal scrollen ===== */
+@media (max-width: 640px) {
+  .app {
+    padding: 24px 14px 60px;
+  }
+
+  .app-kop-rij {
+    flex-direction: column;
+  }
+
+  .kaart-grid {
+    gap: 10px;
+  }
+
+  .kaart {
+    min-height: 84px;
+    padding: 10px 8px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+  }
+
+  .detail {
+    padding: 18px;
+  }
+
+  /* Code past binnen het scherm: regels breken af, geen regelnummers */
+  .code-body {
+    overflow-x: hidden;
+  }
+
+  .code-regelnummers {
+    display: none;
+  }
+
+  .code-pre {
+    padding: 12px;
+  }
+
+  .code-pre code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
 }

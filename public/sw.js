@@ -7,7 +7,7 @@
 // - Overige bestanden (bundle, css, iconen, fonts): stale-while-revalidate.
 //   Snel uit cache, en op de achtergrond wordt een verse versie opgehaald.
 
-const CACHE = 'csharp-kaarten-v1';
+const CACHE = 'csharp-kaarten-v2';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
@@ -30,6 +30,14 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') {
+    return;
+  }
+
+  const url = new URL(request.url);
+
+  // Gamebestand: altijd vers van het netwerk (niet uit cache serveren).
+  if (/game\d*\.json$/.test(url.pathname)) {
+    event.respondWith(fetch(request).catch(() => caches.match(request)));
     return;
   }
 

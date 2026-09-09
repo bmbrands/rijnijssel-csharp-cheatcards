@@ -7,6 +7,9 @@
     "build": "webpack --mode production",
     "icons": "node scripts/generate-icons.js"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "marked": "^18.0.12",
     "prismjs": "^1.30.0",
