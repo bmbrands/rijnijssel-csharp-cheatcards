@@ -10,6 +10,10 @@ namespace VoorbeeldConsole
             string naam = Console.ReadLine();
 
             Console.WriteLine("Hallo " + naam);
+
+            Console.Write("Hoe oud ben je? ");
+            int leeftijd = int.Parse(Console.ReadLine());
+            Console.WriteLine("Je bent " + leeftijd + " jaar oud.");
         }
     }
 }

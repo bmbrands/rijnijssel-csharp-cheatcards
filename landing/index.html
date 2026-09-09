@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rijnijssel — lesmateriaal</title>
+  <meta name="description" content="Lesmateriaal van Rijnijssel: kaarten en opdrachten." />
+  <meta name="theme-color" content="#1e1e1e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --tekst: #1c1c1c;
+      --zacht: #5a5a5a;
+      --lijn: #d5d5d5;
+      --vlak: #ffffff;
+      --accent: #2b2b2b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--tekst);
+      background: var(--vlak);
+      line-height: 1.6;
+    }
+
+    .pagina {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 20px 80px;
+    }
+
+    /* ===== Kop ===== */
+    header {
+      border-bottom: 1px solid var(--lijn);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .intro {
+      margin: 0;
+      color: var(--zacht);
+      font-size: 0.95rem;
+      max-width: 52ch;
+    }
+
+    /* ===== Lessenlijst ===== */
+    .sectie-titel {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--zacht);
+      margin: 0 0 16px;
+    }
+
+    .lessen {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .les {
+      display: block;
+      text-decoration: none;
+      color: var(--tekst);
+      background: var(--vlak);
+      border: 1px solid var(--lijn);
+      border-radius: 6px;
+      padding: 20px 22px;
+      transition: transform 0.08s ease, border-color 0.12s ease;
+    }
+
+    .les:hover,
+    .les:focus-visible {
+      outline: none;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .les:focus-visible {
+      outline: 3px solid #7aa7ff;
+      outline-offset: 2px;
+    }
+
+    .les-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--vlak);
+      background: var(--accent);
+      border-radius: 4px;
+      padding: 3px 8px;
+      margin-bottom: 12px;
+    }
+
+    .les-titel {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+
+    .les-omschrijving {
+      margin: 0;
+      color: var(--zacht);
+      font-size: 0.9rem;
+    }
+
+    .les-meer {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    /* Placeholder voor toekomstige lessen. */
+    .les-binnenkort {
+      border-style: dashed;
+      cursor: default;
+      color: var(--zacht);
+    }
+
+    .les-binnenkort:hover {
+      transform: none;
+      border-color: var(--lijn);
+    }
+
+    .les-binnenkort .les-tag {
+      background: transparent;
+      color: var(--zacht);
+      border: 1px solid var(--lijn);
+    }
+
+    .les-binnenkort .les-titel { color: var(--zacht); }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--lijn);
+      color: var(--zacht);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="pagina">
+    <header>
+      <h1>Rijnijssel — lesmateriaal</h1>
+      <p class="intro">
+        Interactief oefenmateriaal voor de lessen. Kies hieronder een les om de
+        kaarten en opdrachten te openen.
+      </p>
+    </header>
+
+    <main>
+      <h2 class="sectie-titel">Lessen</h2>
+
+      <ul class="lessen">
+        <li>
+          <a class="les" href="les-foreach-jaar1/">
+            <span class="les-tag">Week 2 · Blok 4</span>
+            <h3 class="les-titel">C# — kaarten &amp; opdrachten</h3>
+            <p class="les-omschrijving">
+              Onderwerpkaarten met uitleg en voorbeelden, plus oefeningen
+              deel 1 t/m 4: opfrissers, arrays, foreach en complexere opdrachten.
+            </p>
+            <span class="les-meer">Open les &rarr;</span>
+          </a>
+        </li>
+
+        <li>
+          <div class="les les-binnenkort" aria-disabled="true">
+            <span class="les-tag">Binnenkort</span>
+            <h3 class="les-titel">Nieuwe les</h3>
+            <p class="les-omschrijving">Hier komt de volgende les.</p>
+          </div>
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>&copy; Rijnijssel</p>
+    </footer>
+  </div>
+</body>
+</html>
