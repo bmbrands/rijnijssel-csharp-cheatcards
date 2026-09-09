@@ -2,7 +2,7 @@ import React from 'react';
 
 // Korte, advertentievrije URL (eigen domein) om op de laptop in te typen.
 // Wijzig hier als je een ander kort adres instelt op de server.
-const KORTE_URL = 'basbrands.nl/cs';
+const KORTE_URL = 'rijnijssel.neocities.org';
 
 function ShortUrl() {
   return (

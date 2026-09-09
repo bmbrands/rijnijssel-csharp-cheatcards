@@ -35,12 +35,6 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(request.url);
 
-  // Gamebestand: altijd vers van het netwerk (niet uit cache serveren).
-  if (/game\d*\.json$/.test(url.pathname)) {
-    event.respondWith(fetch(request).catch(() => caches.match(request)));
-    return;
-  }
-
   // Navigatie: eerst netwerk, val terug op cache.
   if (request.mode === 'navigate') {
     event.respondWith(

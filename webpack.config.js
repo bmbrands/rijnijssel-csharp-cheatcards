@@ -8,8 +8,7 @@ module.exports = (env, argv) => ({
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
     publicPath: argv.mode === 'production' ? './' : '/',
-    // Verwijder oude build-bestanden, maar bewaar geuploade gamebestanden.
-    clean: { keep: /game\d*\.json/ },
+    clean: true,
   },
   module: {
     rules: [

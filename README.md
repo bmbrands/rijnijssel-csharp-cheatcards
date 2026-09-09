@@ -41,33 +41,3 @@ De inhoud van de map `dist/` zet je op je webserver.
 Elke kaart is een submap in [`kaarten/`](kaarten) met drie bestanden:
 `meta.json`, `intro.md` en `Program.cs`. De site pikt nieuwe kaarten vanzelf op.
 Zie [`kaarten/README.md`](kaarten/README.md) voor de details.
-
-## Game
-
-Klik op **Herlaad game** in de kop. Staat er een gamebestand op de server, dan
-verschijnt de knop **Start game X** (X is het nummer uit het bestand).
-
-Tijdens een game openen de kaarten niet. Jij stelt de vragen; de leerlingen
-klikken op de kaart met het juiste antwoord. Na de laatste vraag verschijnt de
-uitslag. Maximaal 10 vragen.
-
-### Gamebestand maken
-
-Maak een bestand `game.json` en zet het in de gepubliceerde map (naast
-`index.html`). Zie [`game.example.json`](game.example.json) als voorbeeld:
-
-```json
-{
-  "nummer": 1,
-  "vragen": [
-    { "vraag": "Welke lus herhaalt code een vast aantal keer?", "antwoord": "for" },
-    { "vraag": "Waarin bewaar je meerdere waarden?", "antwoord": "array" }
-  ]
-}
-```
-
-- `antwoord` moet gelijk zijn aan de tekst op een kaart (bijvoorbeeld `for`,
-  `switch`, `array`, `foreach`).
-- Verhoog `nummer` bij een nieuwe game, zodat de knop het nieuwe nummer toont.
-- Het bestand blijft bij een nieuwe `npm run build` bewaard.
-
